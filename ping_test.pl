@@ -1,15 +1,15 @@
 #!/usr/bin/perl
 ######################################################
 #
-#				PING TEST Script
+#		PING TEST Script
 #
-#				ping_test.pl
+#		ping_test.pl
 #
-#				DENET.CO.,LTD
+#		DENET.CO.,LTD
 #
-#		auther   : onishi@Midc 12/12/2011
-#		update by: onishi@Midc 12/12/2011
-#		usage    :./ping_test.pl <FileName>	
+#	auther   : onishi@Midc 12/12/2011
+#	update by: onishi@Midc 12/12/2011
+#	usage    :./ping_test.pl <FileName>	
 #
 ######################################################
 use strict;
