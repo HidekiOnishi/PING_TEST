@@ -10,6 +10,15 @@
 #       auther   : onishi@Midc 12/12/2011
 #       update by: onishi@Midc 14/12/2011
 #       usage    :./ping_test.pl <FileName>
+#		PING TEST Script
+#
+#		ping_test.pl
+#
+#		DENET.CO.,LTD
+#
+#	auther   : onishi@Midc 12/12/2011
+#	update by: onishi@Midc 12/12/2011
+#	usage    :./ping_test.pl <FileName>	
 #
 ######################################################
 use strict;
