@@ -33,7 +33,7 @@ my $timeout = 3;
 $ping = Net::Ping->new("icmp");
 
 open(IN,"< $ARGV[0]");
-open(OUT,"> ping.txt");
+open(OUT,"> $ARGV[0]_ping.txt");
 
 while(<IN>){
         chomp $_;
@@ -65,9 +65,25 @@ close(IN);
 close(OUT);
 
 print "\n";
-print "            -----------------------\n";
-print "(*´ω｀*)< please check ping.txt! |\n";
-print "            -----------------------\n";
+print "            -------------";
+
+$count = length($ARGV[0]);
+while($count > 0){
+        print "-";
+        $count--;
+}
+
+print "-----------\n";
+print "(*´ω｀*)< please check $ARGV[0]_ping.txt! |\n";
+print "            -------------";
+
+$count = length($ARGV[0]);
+while($count > 0){
+        print "-";
+        $count--;
+}
+
+print "-----------\n";
 print "\n";
 
 exit 0;
