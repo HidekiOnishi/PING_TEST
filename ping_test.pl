@@ -8,7 +8,7 @@
 #                DENET.CO.,LTD
 #
 #       auther   : onishi@Midc 12/12/2011
-#       update by: onishi@Midc 14/12/2011
+#       update by: onishi@Midc 19/12/2011
 #       usage    :./ping_test.pl <FileName>
 #
 ######################################################
@@ -32,8 +32,8 @@ my $timeout = 3;
 
 $ping = Net::Ping->new("icmp");
 
-open(IN,"< $ARGV[0]");
-open(OUT,"> $ARGV[0]_ping.txt");
+open(IN,"< $ARGV[0]") or die("error :$!");
+open(OUT,"> $ARGV[0]_ping.txt") or die("error :$!");
 
 while(<IN>){
         chomp $_;
