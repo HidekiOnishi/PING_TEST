@@ -1,15 +1,15 @@
 #!/usr/bin/perl
 ######################################################
 #
-#               PING TEST Script
+#		PING TEST Script
 #
 #                 ping_test.pl
 #
-#                DENET.CO.,LTD
+#		 DENET.CO.,LTD
 #
-#       auther   : onishi@Midc 12/12/2011
-#       update by: onishi@Midc 19/12/2011
-#       usage    :./ping_test.pl <FileName>
+#	auther   : onishi@Midc 12/12/2011
+#	update by: onishi@Midc 12/12/2011
+#       usage    :./ping_test.pl <FileName>	
 #
 ######################################################
 use strict;
@@ -17,9 +17,9 @@ use warnings;
 use Net::Ping;
 
 if(@ARGV == 0){
-        print "Domain File Not Found.\n";
-        print "Usage: ping_test.pl <FileName>\n";
-        exit -1;
+	print "Domain File Not Found.\n";
+	print "Usage: ping_test.pl <FileName>\n";
+	exit -1;
 }
 
 ##Initialize section.##
@@ -32,28 +32,30 @@ my $timeout = 3;
 
 $ping = Net::Ping->new("icmp");
 
-open(IN,"< $ARGV[0]") or die("error :$!");
-open(OUT,"> $ARGV[0]_ping.txt") or die("error :$!");
+open(IN,"< $ARGV[0]");
+open(OUT,"> $ARGV[0]_ping.txt");
 
 while(<IN>){
         chomp $_;
         $count = length($_);
-        print OUT $_;
-        while($count < 64){
-                print OUT "=";
-                $count++;
-        }
-        print OUT "\n";
-        if( $ping->ping($_,$timeout) ){
-                print OUT "$_ PING OK.\n";
-                $success_count++;
-        }else{
-                print OUT "$_ PING NG.\n";
-                $error_count++;
-        }
-        print OUT "================================================================\n";
-        print OUT "\n";
-        $domain_count++;
+	if( $count > 1){
+        	print OUT $_;
+        	while($count < 64){
+                	print OUT "=";
+                	$count++;
+        	}
+		print OUT "\n";
+		if( $ping->ping($_,$timeout) ){
+			print OUT "$_ PING OK.\n";
+			$success_count++;
+		}else{
+			print OUT "$_ PING NG.\n";
+			$error_count++;
+		}
+		print OUT "================================================================\n";
+		print OUT "\n";
+		$domain_count++;
+	}
 }
 
 print OUT "Number of domains:".$domain_count."\n";
@@ -69,8 +71,8 @@ print "            -------------";
 
 $count = length($ARGV[0]);
 while($count > 0){
-        print "-";
-        $count--;
+	print "-";
+	$count--;
 }
 
 print "-----------\n";
